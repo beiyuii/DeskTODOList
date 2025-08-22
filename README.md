@@ -17,6 +17,18 @@ DeskTODOList 是一款专为提升个人效率而设计的桌面待办事项管�
 - ❌ 缺乏有效的任务分类和优先级管理
 - ❌ 跨设备同步体验不佳
 
+## 📚 文档导航
+
+为了帮助您更好地了解和使用 DeskTODOList，我们提供了完整的文档体系：
+
+- 📖 [用户指南](USER_GUIDE.md) - 详细的功能使用说明和操作指南
+- 🏗️ [系统架构](ARCHITECTURE.md) - 技术架构设计和API文档
+- 🤝 [贡献指南](CONTRIBUTING.md) - 如何参与项目开发和贡献代码
+- 🗺️ [开发路线图](ROADMAP.md) - 项目发展规划和未来愿景
+- ❓ [常见问题](FAQ.md) - 常见问题解答和故障排除
+- 📝 [更新日志](CHANGELOG.md) - 版本更新记录和功能变更
+- 🐛 [问题模板](ISSUE_TEMPLATES.md) - Bug报告和功能请求模板
+
 ## ✨ 核心功能
 
 ### 🎨 简约设计
@@ -46,6 +58,8 @@ DeskTODOList 是一款专为提升个人效率而设计的桌面待办事项管�
 - 导入/导出功能
 
 ## 🚀 快速开始
+
+> 📖 **详细指南**：如需更详细的安装和使用说明，请参考 [用户指南](USER_GUIDE.md)。
 
 ### 环境要求
 - Node.js >= 16.0.0
@@ -132,9 +146,11 @@ graph TD
 - **构建工具**: Vite
 - **代码质量**: ESLint + Prettier + Husky
 
+> 🏗️ **深入了解**：查看 [系统架构文档](ARCHITECTURE.md) 了解详细的技术架构设计、数据模型和API规范。
+
 ## 🤝 如何贡献
 
-我们欢迎所有形式的贡献！请查看 [贡献指南](CONTRIBUTING.md) 了解详细信息。
+我们欢迎所有形式的贡献！请查看 [贡献指南](CONTRIBUTING.md) 了解详细的开发流程、代码规范和提交要求。
 
 ### 快速贡献流程
 1. Fork 本仓库
@@ -160,7 +176,9 @@ graph TD
 - 🚧 移动端适配
 - 📅 插件系统 (计划中)
 
-查看完整的 [开发路线图](ROADMAP.md)
+> 🗺️ **了解更多**：查看完整的 [开发路线图](ROADMAP.md) 了解项目的发展规划和各阶段目标。
+> 
+> 📖 **使用帮助**：如需了解如何使用现有功能，请参考 [用户指南](USER_GUIDE.md)。
 
 ## 📄 许可证
 
@@ -170,11 +188,15 @@ graph TD
 
 感谢所有为这个项目做出贡献的开发者们！
 
+> 📝 **版本历史**：查看 [更新日志](CHANGELOG.md) 了解每个版本的详细更新内容和贡献者信息。
+
 ## 📞 联系我们
 
 - 📧 Email: your-email@example.com
 - 🐛 Issues: [GitHub Issues](https://github.com/your-username/DeskTODOList/issues)
 - 💬 Discussions: [GitHub Discussions](https://github.com/your-username/DeskTODOList/discussions)
+
+> ❓ **遇到问题？**：在联系我们之前，请先查看 [常见问题](FAQ.md) 或使用 [问题模板](ISSUE_TEMPLATES.md) 提交详细的问题报告。
 
 ---
 

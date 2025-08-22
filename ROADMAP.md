@@ -236,6 +236,8 @@ graph TD
 
 ## 🤝 社区参与
 
+> 🤝 **参与贡献**：详细的贡献流程和规范请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ### 开源贡献
 
 - 欢迎社区贡献代码和想法
@@ -249,6 +251,8 @@ graph TD
 - 定期进行用户调研
 - 快速响应用户需求
 - 透明的产品决策过程
+
+> ❓ **遇到问题？**：查看 [FAQ.md](FAQ.md) 获取常见问题的解答，或使用 [ISSUE_TEMPLATES.md](ISSUE_TEMPLATES.md) 中的模板提交问题。
 
 ## 🔄 迭代原则
 
