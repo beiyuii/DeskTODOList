@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义基础样式 */
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 防止桌面应用出现滚动条 */
+  }
+
+  #root {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* 隐藏滚动条但保持滚动功能 */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+
+  /* Firefox 滚动条隐藏 */
+  * {
+    scrollbar-width: none;
+  }
+
+  /* 为特定组件提供可见的滚动条选项 */
+  .visible-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .visible-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+    border-radius: 3px;
+  }
+
+  .visible-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600;
+    border-radius: 3px;
+  }
+
+  .visible-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+  }
+
+  .visible-scrollbar {
+    scrollbar-width: thin;
+  }
+}
+
+/* 自定义组件样式 */
+@layer components {
+  .glass-morphism {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass-morphism {
+    background: rgba(31, 41, 55, 0.95);
+    border: 1px solid rgba(75, 85, 99, 0.2);
+  }
+
+  .task-item-hover {
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  .button-primary {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-4 rounded-xl shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300;
+  }
+
+  .button-secondary {
+    @apply bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 font-semibold py-2 px-4 rounded-xl shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300;
+  }
+
+  /* 优先级弹出层样式 */
+  .priority-selector {
+    z-index: 100 !important;
+    position: fixed !important;
+  }
+
+  /* 拖拽功能相关样式 */
+  .dragging {
+    opacity: 0.9;
+  }
+
+  /* 确保拖拽元素可以被正确选中 */
+  [data-rbd-draggable-context-id] {
+    touch-action: manipulation;
+  }
+
+  /* 拖拽时的视觉反馈 - 移除可能冲突的transform样式 */
+  [data-rbd-draggable-id] {
+    transform-origin: center !important;
+  }
+
+  /* 仅在非拖拽状态下应用过渡效果 */
+  [data-rbd-draggable-id]:not([data-rbd-drag-handle-draggable-id]) {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  [data-rbd-draggable-id]:hover {
+    cursor: grab;
+  }
+
+  [data-rbd-draggable-id]:active {
+    cursor: grabbing;
+  }
+
+  /* 拖拽时完全禁用过渡效果 */
+  [data-rbd-draggable-id][data-rbd-drag-handle-draggable-id] {
+    transition: none !important;
+  }
+
+  /* 拖拽占位符样式 */
+  [data-rbd-placeholder-context-id] {
+    opacity: 0.5;
+  }
+
+  /* 确保拖拽时transform不被其他样式覆盖 */
+  [data-rbd-draggable-id][data-rbd-drag-handle-draggable-id] * {
+    transition: none !important;
+  }
+
+  /* 拖拽时的优化样式 */
+  [data-rbd-draggable-id][data-rbd-drag-handle-draggable-id] {
+    z-index: 9999 !important;
+    pointer-events: none;
+  }
+
+  /* 拖拽时禁用所有hover效果 */
+  [data-rbd-draggable-id][data-rbd-drag-handle-draggable-id]:hover,
+  [data-rbd-draggable-id][data-rbd-drag-handle-draggable-id] *:hover {
+    transform: none !important;
+    scale: none !important;
+  }
+}
+
+/* 动画样式 */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
